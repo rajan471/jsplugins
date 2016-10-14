@@ -1,0 +1,155 @@
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\\\INSTALLATION MANUAL FOR T-SHIRT EDITING TOOL\\\\\\\\\\
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+///////////////////////
+Pluging in HTML
+//////////////////////
+
+Copy the HTML from from :
+
+<div id="creativeTool">
+
+to the page where tool has to be installed.
+
+
+///////////////////////
+Pluginng in Javscript 
+///////////////////////
+
+Step1
+=============
+Add tool.min.js in the head of the page. This file contains all the other libraries in compressed format and need not to be edited.
+
+Step2
+=============
+
+Initialize data in JSON on the page as StoreData.
+
+Data stored in "StoreData" variable should be in the below dummy JSON format:
+
+<script>
+var StoreData = {
+	"0" : {
+	    "productType" : "T-Shirts",
+	    "data": {
+	        "0":{
+	            "name" : "Allen Solly",
+	            "products":  {
+	                "0": {
+	                    "productImage" : "images/p1_b1_1-a.png",
+	                    "type": 'Round neck',
+	                    "gender": "unisex",
+	                    "availableColors": {
+	                        "0": {
+	                            "color": "#f1f1f1",
+	                            "frontUrl": "images/p1_b1_1-a.png",
+	                            "backUrl": "images/p1_b1_1-b.png"
+	                        },
+	                        "1": {
+	                            "color": "#DB0521",
+	                            "frontUrl": "images/p1_b1_2-a.png",
+	                            "backUrl": "images/p1_b1_2-b.png"
+	                        },
+	                        "2": {
+	                            "color": "#F3BB00",
+	                            "frontUrl": "images/p1_b1_3-a.png",
+	                            "backUrl": "images/p1_b1_3-b.png"
+	                        },
+	                        "3": {
+	                            "color": "#008C49",
+	                            "frontUrl": "images/p1_b1_4-a.png",
+	                            "backUrl": "images/p1_b1_4-b.png"
+	                        }
+	                    }
+	                },
+	                "1": {
+	                    "productImage" : "images/p2_b1_1-a.png",
+	                    "type": 'Collar neck',
+	                    "gender": "men",
+	                    "availableColors": {
+	                        "0": {
+	                            "color": "#f1f1f1",
+	                            "frontUrl": "images/p2_b1_1-a.png",
+	                            "backUrl": "images/p2_b1_1-b.png"
+	                        },
+	                        "1": {
+	                            "color": "#DB0521",
+	                            "frontUrl": "images/p2_b1_2-a.png",
+	                            "backUrl": "images/p2_b1_2-b.png"
+	                        },
+	                        "2": {
+	                            "color": "#BBAB82",
+	                            "frontUrl": "images/p2_b1_3-a.png",
+	                            "backUrl": "images/p2_b1_3-b.png"
+	                        },
+	                        "3": {
+	                            "color": "#C2E3EF",
+	                            "frontUrl": "images/p2_b1_4-a.png",
+	                            "backUrl": "images/p2_b1_4-b.png"
+	                        }
+	                    }
+	                },
+	                "2": {
+	                    "productImage" : "images/p3_b1_1-a.png",
+	                    "type": 'round neck',
+	                    "gender": "women",
+	                    "availableColors": {
+	                        "0": {
+	                            "color": "#F66911",
+	                            "frontUrl": "images/p3_b1_1-a.png",
+	                            "backUrl": "images/p3_b1_1-b.png"
+	                        },
+	                        "1": {
+	                            "color": "#F3BB00",
+	                            "frontUrl": "images/p3_b1_2-a.png",
+	                            "backUrl": "images/p3_b1_2-b.png"
+	                        },
+	                        "2": {
+	                            "color": "#00803F",
+	                            "frontUrl": "images/p3_b1_3-a.png",
+	                            "backUrl": "images/p3_b1_3-b.png"
+	                        }
+	                    }
+	                }
+	            }
+	        }
+	    }
+	}
+} 
+</script>
+
+
+Convert this JSON data to JSON object as follows:
+
+StoreData =  JSON.parse(JSON.stringify(StoreData));
+
+
+There are two other arrays "clipartURLS" and "maskClips". clipartURLS contains path(URL) of images inside the library (that appears after you click "Choose from our library").
+maskClips array contains paths of SVG files that are used for masking purpose.
+
+var clipartURLS = ["images/cliparts/1.png", "images/cliparts/2.png", "images/cliparts/3.png", "images/cliparts/4.png", "images/cliparts/5.png", "images/cliparts/6.png"];
+
+var maskClips = ['images/svg/splash.svg', 'images/svg/heart.svg', 'images/svg/circles-9.svg', 'images/svg/diamond.svg', 'images/svg/drop-silhouette.svg'];
+
+
+----------------------------------------------
+Note: 
+1. All the SVG files should have a single compound path i.e. all the layers of the SVG should be combined into a single layer. 
+2. All the SVG files must have dimensions of 150px X 150px.
+3. All the images used in the tool must have width to height ratio of 1 i.e.. their height and width should be equal.
+----------------------------------------------
+
+Step 3
+=========
+
+Finally insert the customizertool.min.js at the end of the page body.
+
+
+
+Getting finalized images from the Tool
+========================================
+There is a function generatePrintableImage() that creates high quality images from the canvas. There is you check for the word blob then you can easily find 
+the data in "formData".
+
+This formData can be sent to server for saving the image and further enhancements.

@@ -293,12 +293,11 @@
 
 	}
 
-
-
 	$.fn.verticalSlider.defaults = {
 		speed: 700,
 		initialSlide : 1,
 		height : 350,
 		transition: 'default' // other option : - fixedSliding
 	}
+	
 }(jQuery))

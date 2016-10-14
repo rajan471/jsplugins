@@ -1,0 +1,260 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<!-- <link rel="stylesheet" href="font-awesome-4.6.3/css/font-awesome.min.css"> -->
+		<link rel="stylesheet" href="font/flaticon.min.css">
+		<link rel="stylesheet" href="css/cropper.min.css">
+		<link rel="stylesheet" href="css/tool.min.css">
+		<!-- <script src="js/fabric.min.js"></script> -->
+		<script src="js/tool.min.js"></script>
+		<!-- <script src="js/cropper.min.js"></script> -->
+		<link href="https://fonts.googleapis.com/css?family=Dancing+Script|David+Libre|Indie+Flower|Josefin+Sans|Pacifico|Poiret+One|Roboto" rel="stylesheet">
+	</head>
+	<body>
+		<div id="creativeTool">
+			<div class="croppingTool">
+				<button id="canvasZoomIn"><i class="flaticon-add"></i></button>
+				<button id="canvasZoomOut"><i class="flaticon-substract"></i></button>
+				<div id="croppingToolFront">
+					<img src="#" alt="" id="frontImage">
+					<canvas id="creative"></canvas>
+				</div>
+
+				<div id="croppingToolBack">
+					<img src="#" alt="" id="backImage">
+					<canvas id="creativeBack"></canvas>
+				</div>
+
+				<div id="tShirtsSides">
+					<div class="front"></div>
+					<div class="back"></div>
+				</div>
+				<div id="colors">
+					
+				</div>
+
+			</div>
+			
+			<div class="controls">
+				<button id="uploadGraphicToCanvas"><i class="flaticon-upload"></i> Upload your own graphics</button>
+				<button id="ChooseGraphicToCanvas"><i class="flaticon-star"></i> Choose from our library</button>
+				<button id="changeProductBtn"><i class="flaticon-puzzle"></i> Change Product</button> 
+				<br/>
+				<br/>
+				<textarea type="text" placeholder="Enter text" id="textToAdd"></textarea><br/><button id="addText"><i class="flaticon-edit"></i> Add text</button>
+			    <br/>
+				<button id="saveCanvas"><i class="flaticon-save"></i> Save T-Shirt</button>
+			</div>
+			<br/>
+			<div id="textMenu">
+				<form  id="textMenuForm">
+					<select  name="fontSize" title="Size">
+						<option value="8">8</option>
+						<option value="10">10</option>
+						<option value="12">12</option>
+						<option value="14">14</option>
+						<option value="16">16</option>
+						<option value="18">18</option>
+						<option value="20">20</option>
+						<option value="22">22</option>
+						<option value="24">24</option>
+						<option value="26">26</option>
+						<option value="28">28</option>
+						<option value="30">30</option>
+						<option value="32">32</option>
+						<option value="34">34</option>
+						<option value="36">36</option>
+					</select>
+					<select  name="fontFamily" title="Font">
+						<option value="Roboto">Roboto</option>
+						<option value="comic sans ms">comic sans ms</option>
+						<option value="David Libre">David Libre</option>
+						<option value="Indie Flower">Indie Flower</option>
+						<option value="Josefin Sans">Josefin Sans</option>
+						<option value="Pacifico">Pacifico</option>
+						<option value="Poiret One">Poiret One</option>
+						<option value="Dancing Script">Dancing Script</option>
+					</select><br/>
+					<textarea name="changeText"></textarea><br/>
+					<input type="color" name="fontColor" title="color">
+					<button name="bold"><i class="flaticon-bold-text-option"></i></button>
+					<button name="italic"><i class="flaticon-italicize-text"></i></button>
+					<button name="underline"><i class="flaticon-underline-text-option"></i></button>
+					<button name="alignCenter"><i class="flaticon-center-alignment"></i></button>
+					<button name="alignJustify"><i class="flaticon-justify"></i></button>
+					<button name="alignLeft"><i class="flaticon-left-alignment"></i></button>
+					<button name="alignRight"><i class="flaticon-right-alignment"></i></button>
+					<button name="rotate"><i class="flaticon-rotate"></i></button>
+					<input type="range" min="0" max="1" step="0.1" name="opacity" value="1">
+					<button name="duplicate"><i class="flaticon-duplicate-content"></i></button>
+					<button name="sendBackward"><i class="flaticon-layers"></i>&darr;</button>
+					<button name="bringForward"><i class="flaticon-layers"></i>&uarr;</button>
+					<button name="flipX"><i class="flaticon-flip"></i></button>
+					<button name="flipY"><i class="flaticon-flip-1"></i></button>
+					<button name="delete"><i class="flaticon-dustbin"></i></button>
+				</form>
+			</div>
+			<div id="imageMenu">
+				<form id="imageMenuForm">
+					<button name="crop"><i class="flaticon-scissors"></i></button>
+					<button name="rotate"><i class="flaticon-rotate"></i></button>
+					<button name="clipTo"><i class="flaticon-theater"></i></button>
+					<button name="duplicate"><i class="flaticon-duplicate-content"></i></button>
+					<button name="sendBackward"><i class="flaticon-layers"></i>&darr;</button>
+					<button name="bringForward"><i class="flaticon-layers"></i>&uarr;</button>
+					<button name="flipX"><i class="flaticon-flip"></i></button>
+					<button name="flipY"><i class="flaticon-flip-1"></i></button>
+					<button name="delete"><i class="flaticon-dustbin"></i></button><br/>
+					<input type="range" min="0" max="1" step="0.1" name="opacity"  value="1">
+				</form>
+			</div>
+			
+			<br/>
+			<div id="library"></div>
+			<div id="clipMasks"></div>
+			<div id="output"></div>
+			<div id="imageCrop">
+				<div id="image"></div>
+				<button id="cropIt"><i class="flaticon-scissors"></i> Clip</button>
+			</div>
+			
+			<div id="changeProduct">
+				<span class="close" onClick="this.parentElement.style.display='none'"></span>
+				<form id="changeprodcutForm">
+					<p>Select a category 
+						<select name="category">
+							<option value="-1" selected>----</option>
+							<option value="0">T Shirts</option>
+						</select> 
+						Gender
+						<select name="gender">
+							<option value="women" selected>Women</option>
+							<option value="men">Men</option>
+							<option value="unisex" selected>Unisex</option>
+						</select> 
+						Brand
+						<select name="subCategory">
+							<option value="-1">-----</option>
+						</select>
+						<input type="submit" name="submit" value="GO">
+					</p>
+				</form>
+				<div id="products">
+					
+				</div>
+				<div id="printPositionOptions">
+					<form id="setprintPositionForm">
+						<h3>Which side would you like to edit?</h3>
+						<button name="front">Front</button>
+						<button name="back">Rear</button>
+						<button name="both">Both</button>
+					</form>
+				</div>
+			</div>
+		</div>
+
+		<script>
+			var StoreData = {
+				        "0" : {
+				            "productType" : "T-Shirts",
+				            "data": {
+				                "0":{
+				                    "name" : "Allen Solly",
+				                    "products":  {
+				                        "0": {
+				                            "productImage" : "images/p1_b1_1-a.png",
+				                            "type": 'Round neck',
+				                            "gender": "unisex",
+				                            "availableColors": {
+				                                "0": {
+				                                    "color": "#f1f1f1",
+				                                    "frontUrl": "images/p1_b1_1-a.png",
+				                                    "backUrl": "images/p1_b1_1-b.png"
+				                                },
+				                                "1": {
+				                                    "color": "#DB0521",
+				                                    "frontUrl": "images/p1_b1_2-a.png",
+				                                    "backUrl": "images/p1_b1_2-b.png"
+				                                },
+				                                "2": {
+				                                    "color": "#F3BB00",
+				                                    "frontUrl": "images/p1_b1_3-a.png",
+				                                    "backUrl": "images/p1_b1_3-b.png"
+				                                },
+				                                "3": {
+				                                    "color": "#008C49",
+				                                    "frontUrl": "images/p1_b1_4-a.png",
+				                                    "backUrl": "images/p1_b1_4-b.png"
+				                                }
+				                            }
+				                        },
+				                        "1": {
+				                            "productImage" : "images/p2_b1_1-a.png",
+				                            "type": 'Collar neck',
+				                            "gender": "men",
+				                            "availableColors": {
+				                                "0": {
+				                                    "color": "#f1f1f1",
+				                                    "frontUrl": "images/p2_b1_1-a.png",
+				                                    "backUrl": "images/p2_b1_1-b.png"
+				                                },
+				                                "1": {
+				                                    "color": "#DB0521",
+				                                    "frontUrl": "images/p2_b1_2-a.png",
+				                                    "backUrl": "images/p2_b1_2-b.png"
+				                                },
+				                                "2": {
+				                                    "color": "#BBAB82",
+				                                    "frontUrl": "images/p2_b1_3-a.png",
+				                                    "backUrl": "images/p2_b1_3-b.png"
+				                                },
+				                                "3": {
+				                                    "color": "#C2E3EF",
+				                                    "frontUrl": "images/p2_b1_4-a.png",
+				                                    "backUrl": "images/p2_b1_4-b.png"
+				                                }
+				                            }
+				                        },
+				                        "2": {
+				                            "productImage" : "images/p3_b1_1-a.png",
+				                            "type": 'round neck',
+				                            "gender": "women",
+				                            "availableColors": {
+				                                "0": {
+				                                    "color": "#F66911",
+				                                    "frontUrl": "images/p3_b1_1-a.png",
+				                                    "backUrl": "images/p3_b1_1-b.png"
+				                                },
+				                                "1": {
+				                                    "color": "#F3BB00",
+				                                    "frontUrl": "images/p3_b1_2-a.png",
+				                                    "backUrl": "images/p3_b1_2-b.png"
+				                                },
+				                                "2": {
+				                                    "color": "#00803F",
+				                                    "frontUrl": "images/p3_b1_3-a.png",
+				                                    "backUrl": "images/p3_b1_3-b.png"
+				                                }
+				                            }
+				                        }
+				                    }
+				                }
+				            }
+				        }
+				        
+				    } 
+
+
+		    StoreData =  JSON.parse(JSON.stringify(StoreData));
+			var clipartURLS = ["images/cliparts/1.png", "images/cliparts/2.png", "images/cliparts/3.png", "images/cliparts/4.png", "images/cliparts/5.png", "images/cliparts/6.png"];
+
+			var maskClips = ['images/svg/splash.svg', 'images/svg/heart.svg', 'images/svg/circles-9.svg', 'images/svg/diamond.svg', 'images/svg/drop-silhouette.svg'];
+
+
+		</script>
+		<!-- <script src="js/canvas-to-blob.min.js"></script> -->
+		<script src="js/customizertool.min.js"></script>
+
+
+	</body>
+</html>

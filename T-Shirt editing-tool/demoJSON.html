@@ -1,0 +1,426 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	
+</head>
+<body>
+<div id="container">
+<h1>JSON Documentation for Cropping tool</h1>
+<p>
+	The required JSON format is explained below:
+</p>
+<pre>
+{
+	"0" : { //Contains all the information required for a certain product Type.
+		"productType" : "T-Shirts",   					//Shows product type (Can be skipped)
+		"data": {							//Contains all the data of the product type say T-Shirts
+			"0":{
+				"brandName" : "Allen Solly", 			//This is one of T-Shirt brand
+				"products":  { 					//All the products of the above Brand
+					"0": {  				//product 1
+						"Model": "2001 Fine Jersey Short Sleeve Crew Neck",
+						"type": 'Round neck',
+						"gender": "unisex",
+						"availableColors": {		//All Available colors, their hex code, color name and varients
+							"0": {
+								"color": "#f1f1f1",
+								"colorName": "light grey",
+								"frontUrl": "images/p1_b1_1-a.png", 	//Front image URL with color 1
+								"backUrl": "images/p1_b1_1-b.png",		//back image URL with color 1	
+								"SKU": "Apparel-DTG-Tshirt-AA-2001-2XL-Brown-Mens-CFCB"
+							},
+							"1": {
+								"color": "#DB0521",
+								"colorName": "dummy color name",
+								"frontUrl": "images/p1_b1_2-a.png",		//Front image URL with color 2
+								"backUrl": "images/p1_b1_2-b.png",		//Front image URL with color 2
+								"SKU": "Apparel-DTG-Tshirt-AA-2001-2XL-Brown-Mens-CFCB"
+							},
+							"2": {
+								"color": "#F3BB00",
+								"colorName": "dummy color name",
+								"frontUrl": "images/p1_b1_3-a.png",
+								"backUrl": "images/p1_b1_3-b.png",
+								"SKU": "Apparel-DTG-Tshirt-AA-2001-2XL-Brown-Mens-CFCB"
+							},
+							"3": {
+								"color": "#008C49",
+								"colorName": "dummy color name",
+								"frontUrl": "images/p1_b1_4-a.png",
+								"backUrl": "images/p1_b1_4-b.png",
+								"SKU": "Apparel-DTG-Tshirt-AA-2001-2XL-Brown-Mens-CFCB"
+							}
+						}
+					},
+					"1": {							//Product 2
+						"Model": "2001 Fine Jersey Short Sleeve Crew Neck",
+						"type": 'Collar neck',
+						"gender": "men",
+						"availableColors": {
+							"0": {
+								"color": "#f1f1f1",
+								"colorName": "dummy color name",
+								"frontUrl": "images/p2_b1_1-a.png",
+								"backUrl": "images/p2_b1_1-b.png",
+								"SKU": "Apparel-DTG-Tshirt-AA-2001-2XL-Brown-Mens-CFCB"
+							},
+							"1": {
+								"color": "#DB0521",
+								"colorName": "dummy color name",
+								"frontUrl": "images/p2_b1_2-a.png",
+								"backUrl": "images/p2_b1_2-b.png",
+								"SKU": "Apparel-DTG-Tshirt-AA-2001-2XL-Brown-Mens-CFCB"
+							},
+							"2": {
+								"color": "#BBAB82",
+								"colorName": "dummy color name",
+								"frontUrl": "images/p2_b1_3-a.png",
+								"backUrl": "images/p2_b1_3-b.png",
+								"SKU": "Apparel-DTG-Tshirt-AA-2001-2XL-Brown-Mens-CFCB"
+							},
+							"3": {
+								"color": "#C2E3EF",
+								"colorName": "dummy color name",
+								"frontUrl": "images/p2_b1_4-a.png",
+								"backUrl": "images/p2_b1_4-b.png",
+								"SKU": "Apparel-DTG-Tshirt-AA-2001-2XL-Brown-Mens-CFCB"
+							}
+						}
+					}
+
+					.
+					.
+					. // And so on for other brands
+					.
+					.
+				}
+			},
+			"1":{				//This is brand 2 of T-Shirts
+				"brandName" : "HRX", 			
+				"products":  { 					//All the products of the above Brand
+					"0": {  				//product 1
+						"Model": "2001 Fine Jersey Short Sleeve Crew Neck",
+						"type": 'Round neck',
+						"gender": "unisex",
+						"availableColors": {		//All Available colors, their hex code, color name and varients
+							"0": {
+								"color": "#f1f1f1",
+								"colorName": "light grey",
+								"frontUrl": "images/p1_b1_1-a.png", 	//Front image URL with color 1
+								"backUrl": "images/p1_b1_1-b.png",		//back image URL with color 1	
+								"SKU": "Apparel-DTG-Tshirt-AA-2001-2XL-Brown-Mens-CFCB"
+							},
+							"1": {
+								"color": "#DB0521",
+								"colorName": "dummy color name",
+								"frontUrl": "images/p1_b1_2-a.png",		//Front image URL with color 2
+								"backUrl": "images/p1_b1_2-b.png",		//Front image URL with color 2
+								"SKU": "Apparel-DTG-Tshirt-AA-2001-2XL-Brown-Mens-CFCB"
+							},
+							"2": {
+								"color": "#F3BB00",
+								"colorName": "dummy color name",
+								"frontUrl": "images/p1_b1_3-a.png",
+								"backUrl": "images/p1_b1_3-b.png",
+								"SKU": "Apparel-DTG-Tshirt-AA-2001-2XL-Brown-Mens-CFCB"
+							},
+							"3": {
+								"color": "#008C49",
+								"colorName": "dummy color name",
+								"frontUrl": "images/p1_b1_4-a.png",
+								"backUrl": "images/p1_b1_4-b.png",
+								"SKU": "Apparel-DTG-Tshirt-AA-2001-2XL-Brown-Mens-CFCB"
+							}
+						}
+					},
+					"1": {							//Product 2
+						"Model": "2001 Fine Jersey Short Sleeve Crew Neck",
+						"type": 'Collar neck',
+						"gender": "men",
+						"availableColors": {
+							"0": {
+								"color": "#f1f1f1",
+								"colorName": "dummy color name",
+								"frontUrl": "images/p2_b1_1-a.png",
+								"backUrl": "images/p2_b1_1-b.png",
+								"SKU": "Apparel-DTG-Tshirt-AA-2001-2XL-Brown-Mens-CFCB"
+							},
+							"1": {
+								"color": "#DB0521",
+								"colorName": "dummy color name",
+								"frontUrl": "images/p2_b1_2-a.png",
+								"backUrl": "images/p2_b1_2-b.png",
+								"SKU": "Apparel-DTG-Tshirt-AA-2001-2XL-Brown-Mens-CFCB"
+							},
+							"2": {
+								"color": "#BBAB82",
+								"colorName": "dummy color name",
+								"frontUrl": "images/p2_b1_3-a.png",
+								"backUrl": "images/p2_b1_3-b.png",
+								"SKU": "Apparel-DTG-Tshirt-AA-2001-2XL-Brown-Mens-CFCB"
+							},
+							"3": {
+								"color": "#C2E3EF",
+								"colorName": "dummy color name",
+								"frontUrl": "images/p2_b1_4-a.png",
+								"backUrl": "images/p2_b1_4-b.png",
+								"SKU": "Apparel-DTG-Tshirt-AA-2001-2XL-Brown-Mens-CFCB"
+							}
+						}
+					}
+
+					.
+					.
+					. // And so on for other brands
+					.
+					.
+				}
+			}
+		}
+	},
+
+	"1" : { //Contains all the information required for another product Type.
+		"productType" : "product type 2",   				
+		"data": {							//Contains all the data of the product type say T-Shirts
+			"0":{
+				"brandName" : "Allen Solly", 			//This is one of T-Shirt brand
+				"products":  { 					//All the products of the above Brand
+					"0": {  				//product 1
+						"Model": "2001 Fine Jersey Short Sleeve Crew Neck",
+						"type": 'Round neck',
+						"gender": "unisex",
+						"availableColors": {		//All Available colors, their hex code, color name and varients
+							"0": {
+								"color": "#f1f1f1",
+								"colorName": "light grey",
+								"frontUrl": "images/p1_b1_1-a.png", 	//Front image URL with color 1
+								"backUrl": "images/p1_b1_1-b.png",		//back image URL with color 1	
+								"SKU": "Apparel-DTG-Tshirt-AA-2001-2XL-Brown-Mens-CFCB"
+							},
+							"1": {
+								"color": "#DB0521",
+								"colorName": "dummy color name",
+								"frontUrl": "images/p1_b1_2-a.png",		//Front image URL with color 2
+								"backUrl": "images/p1_b1_2-b.png",		//Front image URL with color 2
+								"SKU": "Apparel-DTG-Tshirt-AA-2001-2XL-Brown-Mens-CFCB"
+							},
+							"2": {
+								"color": "#F3BB00",
+								"colorName": "dummy color name",
+								"frontUrl": "images/p1_b1_3-a.png",
+								"backUrl": "images/p1_b1_3-b.png",
+								"SKU": "Apparel-DTG-Tshirt-AA-2001-2XL-Brown-Mens-CFCB"
+							},
+							"3": {
+								"color": "#008C49",
+								"colorName": "dummy color name",
+								"frontUrl": "images/p1_b1_4-a.png",
+								"backUrl": "images/p1_b1_4-b.png",
+								"SKU": "Apparel-DTG-Tshirt-AA-2001-2XL-Brown-Mens-CFCB"
+							}
+						}
+					},
+					"1": {							//Product 2
+						"Model": "2001 Fine Jersey Short Sleeve Crew Neck",
+						"type": 'Collar neck',
+						"gender": "men",
+						"availableColors": {
+							"0": {
+								"color": "#f1f1f1",
+								"colorName": "dummy color name",
+								"frontUrl": "images/p2_b1_1-a.png",
+								"backUrl": "images/p2_b1_1-b.png",
+								"SKU": "Apparel-DTG-Tshirt-AA-2001-2XL-Brown-Mens-CFCB"
+							},
+							"1": {
+								"color": "#DB0521",
+								"colorName": "dummy color name",
+								"frontUrl": "images/p2_b1_2-a.png",
+								"backUrl": "images/p2_b1_2-b.png",
+								"SKU": "Apparel-DTG-Tshirt-AA-2001-2XL-Brown-Mens-CFCB"
+							},
+							"2": {
+								"color": "#BBAB82",
+								"colorName": "dummy color name",
+								"frontUrl": "images/p2_b1_3-a.png",
+								"backUrl": "images/p2_b1_3-b.png",
+								"SKU": "Apparel-DTG-Tshirt-AA-2001-2XL-Brown-Mens-CFCB"
+							},
+							"3": {
+								"color": "#C2E3EF",
+								"colorName": "dummy color name",
+								"frontUrl": "images/p2_b1_4-a.png",
+								"backUrl": "images/p2_b1_4-b.png",
+								"SKU": "Apparel-DTG-Tshirt-AA-2001-2XL-Brown-Mens-CFCB"
+							}
+						}
+					}
+
+					.
+					.
+					. // And so on for other brands
+					.
+					.
+				}
+			},
+			"1":{				//This is brand 2 of T-Shirts
+				"brandName" : "HRX", 			
+				"products":  { 					//All the products of the above Brand
+					"0": {  				//product 1
+						"Model": "2001 Fine Jersey Short Sleeve Crew Neck",
+						"type": 'Round neck',
+						"gender": "unisex",
+						"availableColors": {		//All Available colors, their hex code, color name and varients
+							"0": {
+								"color": "#f1f1f1",
+								"colorName": "light grey",
+								"frontUrl": "images/p1_b1_1-a.png", 	//Front image URL with color 1
+								"backUrl": "images/p1_b1_1-b.png",		//back image URL with color 1	
+								"SKU": "Apparel-DTG-Tshirt-AA-2001-2XL-Brown-Mens-CFCB"
+							},
+							"1": {
+								"color": "#DB0521",
+								"colorName": "dummy color name",
+								"frontUrl": "images/p1_b1_2-a.png",		//Front image URL with color 2
+								"backUrl": "images/p1_b1_2-b.png",		//Front image URL with color 2
+								"SKU": "Apparel-DTG-Tshirt-AA-2001-2XL-Brown-Mens-CFCB"
+							},
+							"2": {
+								"color": "#F3BB00",
+								"colorName": "dummy color name",
+								"frontUrl": "images/p1_b1_3-a.png",
+								"backUrl": "images/p1_b1_3-b.png",
+								"SKU": "Apparel-DTG-Tshirt-AA-2001-2XL-Brown-Mens-CFCB"
+							},
+							"3": {
+								"color": "#008C49",
+								"colorName": "dummy color name",
+								"frontUrl": "images/p1_b1_4-a.png",
+								"backUrl": "images/p1_b1_4-b.png",
+								"SKU": "Apparel-DTG-Tshirt-AA-2001-2XL-Brown-Mens-CFCB"
+							}
+						}
+					},
+					"1": {							//Product 2
+						"Model": "2001 Fine Jersey Short Sleeve Crew Neck",
+						"type": 'Collar neck',
+						"gender": "men",
+						"availableColors": {
+							"0": {
+								"color": "#f1f1f1",
+								"colorName": "dummy color name",
+								"frontUrl": "images/p2_b1_1-a.png",
+								"backUrl": "images/p2_b1_1-b.png",
+								"SKU": "Apparel-DTG-Tshirt-AA-2001-2XL-Brown-Mens-CFCB"
+							},
+							"1": {
+								"color": "#DB0521",
+								"colorName": "dummy color name",
+								"frontUrl": "images/p2_b1_2-a.png",
+								"backUrl": "images/p2_b1_2-b.png",
+								"SKU": "Apparel-DTG-Tshirt-AA-2001-2XL-Brown-Mens-CFCB"
+							},
+							"2": {
+								"color": "#BBAB82",
+								"colorName": "dummy color name",
+								"frontUrl": "images/p2_b1_3-a.png",
+								"backUrl": "images/p2_b1_3-b.png",
+								"SKU": "Apparel-DTG-Tshirt-AA-2001-2XL-Brown-Mens-CFCB"
+							},
+							"3": {
+								"color": "#C2E3EF",
+								"colorName": "dummy color name",
+								"frontUrl": "images/p2_b1_4-a.png",
+								"backUrl": "images/p2_b1_4-b.png",
+								"SKU": "Apparel-DTG-Tshirt-AA-2001-2XL-Brown-Mens-CFCB"
+							}
+						}
+					}
+
+					.
+					.
+					. // And so on for other brands
+					.
+					.
+				}
+			}
+		}
+	}
+	
+} 
+</pre>
+<p>
+	We can use the above JSON data for multiple product type (future oriented). If you notice in the above data at "0" we have "productType": "T-Shirts", this can be skipped if we are doing this for T-Shirts only. Then JSON should become:
+</p>
+<pre>
+{
+	"data": {							//Contains all the data of the product type say T-Shirts
+		"0":{
+			"brandName" : "Allen Solly", 			//This is one of T-Shirt brand
+			"products":  { 					//All the products of the above Brand
+				"0": {  				//product 1
+					"Model": "2001 Fine Jersey Short Sleeve Crew Neck",
+					"type": 'Round neck',
+					"gender": "unisex",
+					"availableColors": {		//All Available colors, their hex code, color name and varients
+						"0": {
+							"color": "#f1f1f1",
+							"colorName": "light grey",
+							"frontUrl": "images/p1_b1_1-a.png", 	//Front image URL with color 1
+							"backUrl": "images/p1_b1_1-b.png",		//back image URL with color 1	
+							"SKU": "Apparel-DTG-Tshirt-AA-2001-2XL-Brown-Mens-CFCB"
+						},
+						"1": {
+							"color": "#DB0521",
+							"colorName": "dummy color name",
+							"frontUrl": "images/p1_b1_2-a.png",		//Front image URL with color 2
+							"backUrl": "images/p1_b1_2-b.png",		//Front image URL with color 2
+							"SKU": "Apparel-DTG-Tshirt-AA-2001-2XL-Brown-Mens-CFCB"
+						},
+						"2": {
+							"color": "#F3BB00",
+							"colorName": "dummy color name",
+							"frontUrl": "images/p1_b1_3-a.png",
+							"backUrl": "images/p1_b1_3-b.png",
+							"SKU": "Apparel-DTG-Tshirt-AA-2001-2XL-Brown-Mens-CFCB"
+						},
+						"3": {
+							"color": "#008C49",
+							"colorName": "dummy color name",
+							"frontUrl": "images/p1_b1_4-a.png",
+							"backUrl": "images/p1_b1_4-b.png",
+							"SKU": "Apparel-DTG-Tshirt-AA-2001-2XL-Brown-Mens-CFCB"
+						}
+					}
+				}
+				.
+				.
+				. // And so on for Brand 1
+				.
+				.
+			}
+		}
+	}
+}
+</pre>
+
+<p>
+	All the varients are put under "availableColors" as "0","1",... This makes it easier to find them under same roof and are easier to manage.
+</p>
+<p>
+	Also the tool will show front image of first varient ("0" in "availableColors") in the product list in "Change Product" modal. After then all the varients will get available for user to edit and use.
+</p>
+</div>
+<style>
+	#container{
+		width: 1170px;
+		margin: 0 auto;
+		padding: 50px 0;
+	}
+	pre{
+		border: 1px solid #ccc;
+		background: #f1f1f1;
+	}
+</style>
+</body>
+</html>
