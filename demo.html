@@ -1,0 +1,86 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<link rel="stylesheet" href="src/css/verticalSlider.css">
+</head>
+<body>
+	<div class="sliderWrapper">
+		<div id="verticalSlider" class="verticalSlider">
+			<ul class="slides">
+				<li data-img="images/1.jpg"></li>
+				<li data-img="images/2.jpg"></li>
+				<li data-img="images/3.jpg"></li>
+				<li data-img="images/4.jpg"></li>
+			</ul>
+		</div>
+		<div class="overlay">
+			<div id="verticalSlider2" class="verticalSlider">
+				<ul class="slides">
+					<li><h1>1</h1></li>
+					<li><h1>2</h1></li>
+					<li><h1>3</h1></li>
+					<li><h1>4</h1></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<script src="src/js/jquery-3.1.1.min.js"></script>
+	<script src="src/js/verticalSlider.js"></script>
+
+	<script>
+		$("#verticalSlider").verticalSlider({
+			speed: 1000,
+			height : 450,
+			theme: 'fixedSliding'
+		});
+		$("#verticalSlider2").verticalSlider({
+			speed: 1000,
+			height : 450
+		});
+
+		$(".verticalSlider#verticalSlider2 .slideUp").on("click", function() {
+			$(".fixedSliding#verticalSlider .slideUp").click();
+		})
+		$(".verticalSlider#verticalSlider2 .slideDown").on("click", function() {
+			$(".fixedSliding#verticalSlider .slideDown").click();	
+		})
+
+		$(".verticalSlider#verticalSlider2 .controls span").on("click", function() {
+			var n = $(this).parent().index();
+			$(".fixedSliding#verticalSlider .controls span").eq(n).click();	
+		})
+	</script>
+	<style>
+		.fixedSliding#verticalSlider .slideUp, .fixedSliding#verticalSlider .slideDown{visibility: hidden;}
+		.fixedSliding#verticalSlider .controls span{display: none;}
+		.sliderWrapper{
+			position: relative;
+		}
+		.sliderWrapper .overlay {
+			max-width: 360px;
+			position: absolute;
+			right: 10vw;
+			top: 0;
+			width: 100%;
+			z-index: 15;
+		}
+		.sliderWrapper .overlay  #verticalSlider2 .slides li{
+			background: rgba(0,0,0,0.6);
+		}
+
+		/* *** transition**** */
+		.verticalSlider .slides div.background{
+			top: 0;
+		}
+		.verticalSlider .slides.animatingUp li.active div.background{
+			top: -30%;
+			transition: all ease 1s;
+		}
+		.verticalSlider .slides.animatingDown li.active div.background{
+			top: 30%;
+			transition: all ease 1s;
+		}
+	</style>
+</body>
+</html>

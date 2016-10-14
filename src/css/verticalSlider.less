@@ -1,0 +1,27 @@
+@import "css-resets.less";
+@import "slider-arrows.less";
+@import "slider-animations.less";
+.verticalSlider ,.verticalSlider *{box-sizing: border-box;}
+.verticalSlider{position: relative; }
+.verticalSlider .slides{margin: 0; padding:0; position: relative; overflow: hidden;}
+.verticalSlider .slides li{
+	display: block;
+	position: relative;
+}
+.fixedSliding.verticalSlider .slides{margin: 0; padding:0; position: relative; left: 0; top: 0; width: 100%;}
+.fixedSliding.verticalSlider .slides li{
+	display: block;
+	position: absolute;
+	width: 100%;
+	left: 0;
+	top: 0;
+}
+.verticalSlider .slides li img:extend(.verticalSlider .slides li){
+	width: 100%;
+}
+.verticalSlider .slides li div.background:extend(.verticalSlider .slides li){
+	height: 100%;
+	background-position: center center ;
+	background-attachment: scroll; ;
+	background-size: cover;	background-repeat: no-repeat;
+}
